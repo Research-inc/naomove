@@ -1,1 +1,1 @@
-from .core import pointArm, pointArmBasedOnQuad
+from .core import pointArm, pointArmBasedOnQuad, walk, walkWithDirection

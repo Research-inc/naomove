@@ -1,1 +1,1 @@
-from .src import pointArm, pointArmBasedOnQuad
+from .src import pointArm, pointArmBasedOnQuad, walk, walkWithDirection
