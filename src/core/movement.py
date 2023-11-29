@@ -119,3 +119,9 @@ def walkWithDirection(NAO_IP, direction):
 
     elif direction == "right":
         walk(NAO_IP, 0, -0.5)
+
+    elif direction == "forward":
+        walk(NAO_IP, 0.5, 0)
+
+    elif direction == "backward":
+        walk(NAO_IP, -0.5, 0)
