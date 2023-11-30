@@ -46,7 +46,7 @@ def StiffnessOn(proxy):
     proxy.stiffnessInterpolation(pNames, pStiffnessLists, pTimeLists)
 
 
-def walk(NAO_IP, x, y):
+def walk(NAO_IP, x, y, theta):
     # Init proxies.
     try:
         motionProxy = ALProxy("ALMotion", NAO_IP, 9559)
@@ -82,7 +82,7 @@ def walk(NAO_IP, x, y):
     #TARGET VELOCITY
     X = x
     Y = y
-    Theta = 0.0
+    Theta = theta
     Frequency =1.0 # max speed
     motionProxy.setWalkTargetVelocity(X, Y, Theta, Frequency)
 
@@ -109,19 +109,25 @@ def walk(NAO_IP, x, y):
 def walkWithDirection(NAO_IP, direction):
 
     if direction == "angleright":
-        walk(NAO_IP, 0.5, -0.5)
+        walk(NAO_IP, 0.5, -0.5, 0.0)
 
     elif direction == "angleleft":
-        walk(NAO_IP, 0.5, 0.5)
+        walk(NAO_IP, 0.5, 0.5, 0.0)
 
     elif direction == "left":
-        walk(NAO_IP, 0, 0.5)
+        walk(NAO_IP, 0, 0.5, 0.0)
 
     elif direction == "right":
-        walk(NAO_IP, 0, -0.5)
+        walk(NAO_IP, 0, -0.5, 0.0)
 
     elif direction == "forward":
-        walk(NAO_IP, 0.5, 0)
+        walk(NAO_IP, 0.5, 0, 0.0)
 
     elif direction == "backward":
-        walk(NAO_IP, -0.5, 0)
+        walk(NAO_IP, -0.5, 0, 0.0)
+
+    elif direction == "perpright":
+        walk(NAO_IP, 0.0, 0.0, -1.0)
+        
+    elif direction == "perpleft":
+        walk(NAO_IP, 0.0, 0.0, 1.0)
