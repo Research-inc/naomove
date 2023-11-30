@@ -115,16 +115,16 @@ def walkWithDirection(NAO_IP, direction):
         walk(NAO_IP, 0.5, 0.5, 0.0)
 
     elif direction == "left":
-        walk(NAO_IP, 0, 0.5, 0.0)
+        walk(NAO_IP, 0.0, 0.5, 0.0)
 
     elif direction == "right":
-        walk(NAO_IP, 0, -0.5, 0.0)
+        walk(NAO_IP, 0.0, -0.5, 0.0)
 
     elif direction == "forward":
-        walk(NAO_IP, 0.5, 0, 0.0)
+        walk(NAO_IP, 0.5, 0.0, 0.0)
 
     elif direction == "backward":
-        walk(NAO_IP, -0.5, 0, 0.0)
+        walk(NAO_IP, -0.5, 0.0, 0.0)
 
     elif direction == "perpright":
         walk(NAO_IP, 0.0, 0.0, -1.0)
